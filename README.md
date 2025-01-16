@@ -11,7 +11,6 @@ docker network create wordpress
 
  ### Wordpress example
 ```
-cd kubernetes\tutorials\basics\
 
 docker build -f dockerfiles/wordpress.dockerfile . -t aimvector/wordpress-example
 
