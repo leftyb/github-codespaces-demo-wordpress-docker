@@ -12,14 +12,14 @@ docker network create wordpress
  ### Wordpress example
 ```
 
-docker build -f dockerfiles/wordpress.dockerfile . -t aimvector/wordpress-example
+docker build -f dockerfiles/wordpress.dockerfile . -t lefty/wordpress-example
 
 ```
 
 * Run our Wordpress container
 
 ```
-docker run -it --rm -p 80:80 --net wordpress aimvector/wordpress-example
+docker run -it --rm -p 80:80 --net wordpress lefty/wordpress-example
 ```
 
 The wordpress container will be visible on port 80 on `http://localhost/`
@@ -30,7 +30,7 @@ The wordpress container will be visible on port 80 on `http://localhost/`
 * Build our MySQl container image
 
 ```
-docker build -f dockerfiles/mysql.dockerfile . -t aimvector/mysql-example
+docker build -f dockerfiles/mysql.dockerfile . -t lefty/mysql-example
 ```
 
 * How do we run our MySQL ? 
@@ -54,12 +54,12 @@ docker run --rm -d `
 -e MYSQL_PASSWORD=examplepassword `
 -e MYSQL_RANDOM_ROOT_PASSWORD=1 `
 -v ${PWD}/data:/var/lib/mysql `
-aimvector/mysql-example
+lefty/mysql-example
 
 # we can see the container with
 docker ps
 CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS                 NAMES
-92cde663a3f5   aimvector/mysql-example   "docker-entrypoint.s…"   5 seconds ago   Up 3 seconds   3306/tcp, 33060/tcp   mysql
+92cde663a3f5   lefty/mysql-example   "docker-entrypoint.s…"   5 seconds ago   Up 3 seconds   3306/tcp, 33060/tcp   mysql
 
 ```
 
@@ -75,7 +75,7 @@ docker run -d `
 -e WORDPRESS_DB_USER=exampleuser `
 -e WORDPRESS_DB_PASSWORD=examplepassword `
 -e WORDPRESS_DB_NAME=exampledb `
-aimvector/wordpress-example
+lefty/wordpress-example
 ```
 
 ### Clean up 
