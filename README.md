@@ -19,7 +19,7 @@ docker build -f dockerfiles/wordpress.dockerfile . -t lefty/wordpress-example
 * Run our Wordpress container
 
 ```
-docker run -it --rm -p 80:80 --net wordpress lefty/wordpress-example
+docker run -itd --rm -p 80:80 --net wordpress lefty/wordpress-example
 ```
 
 The wordpress container will be visible on port 80 on `http://localhost/`
